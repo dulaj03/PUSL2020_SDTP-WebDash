@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0a192f;
+            color: #d1d5db;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #60a5fa;
+            margin-bottom: 30px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .button {
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 250px;
+            transition: background-color 0.3s;
+        }
+
+        .button-logout {
+            background-color: #f44336;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .button-logout:hover {
+            background-color: #d32f2f;
+        }
+
+        .button:focus {
+            outline: none;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #60a5fa;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <h1>Welcome to Admin Panel</h1>
+
+    <div class="button-container">
+        <button onclick="window.location.href='viewAdmin.php'" class="button">View Admins</button>
+        
+        <button onclick="window.location.href='addAdmin.html'" class="button">Add Admins</button>
+        
+        <button onclick="window.location.href='Home.html'" class="button" style="background-color: red">Back</button>
+        
+        
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Air Quality Monitoring System</p>
+    </div>
+
+</body>
+</html>
+
