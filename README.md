@@ -17,5 +17,6 @@ The application is designed to facilitate air quality monitoring by integrating 
 
 ## Techs and Tools :- 
 - html / css / js
-- PHP / SQL (XAMPP)
+- PHP
+- phpMyAdmin (XAMPP Server)
 - VS Code
