@@ -3,119 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Air Quality Dashboard</title>
+    <title>Air Quality - Update Dashboard</title>
+    <link rel="icon" type="image/png" href="Img/IMG_9098.PNG">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #0a192f;
-            color: #d1d5db;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            flex-direction: column;
-        }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #0a192f, #1e293b);
+    color: #d1d5db;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
 
-        h1 {
-            text-align: center;
-            color: #60a5fa;
-            margin-bottom: 20px;
-        }
+h1 {
+    text-align: center;
+    color: #60a5fa;
+    font-size: 36px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
+.container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+}
 
-        .table-container, .charts-container {
-            width: 100%;
-            background: #1e293b;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
+.table-container, .charts-container {
+    width: 100%;
+    background: rgba(30, 41, 59, 0.95);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
 
-        th, td {
-            padding: 10px;
-            text-align: center;
-            border: 1px solid #334155;
-        }
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #334155;
+}
 
-        th {
-            background-color: #2563eb;
-            color: white;
-        }
+th {
+    background-color: #2563eb;
+    color: white;
+}
 
-        td {
-            background-color: #1e293b;
-            color: #d1d5db;
-        }
+td {
+    background-color: #1e293b;
+    color: #d1d5db;
+}
 
-        .charts {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
+.charts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
 
-        canvas {
-            width: 500px !important;
-            height: 350px !important;
-        }
+canvas {
+    width: 500px !important;
+    height: 350px !important;
+}
 
-        .update-button, .back-button {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 15px;
-        }
+.update-button, .back-button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
 
-        .update-button button {
-            background-color: #2563eb;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .back-button button {
-        background-color: red; 
-        color: white; 
-        border: none;
-        padding: 10px 20px;
-        font-size: 16px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background 0.3s;
+.update-button button,
+.back-button button {
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+.update-button button {
+    background: linear-gradient(90deg, #2563eb, #1e40af);
+    color: white;
+    border: none;
+}
+
+.back-button button {
+    background: linear-gradient(90deg, #ef4444, #b91c1c);
+    color: white;
+    border: none;
+}
+
+.update-button button:hover,
+.back-button button:hover {
+    transform: scale(1.05);
+    opacity: 0.95;
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #60a5fa;
+}
+
+/* Optional animation for subheading */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
     }
-
-    .back-button button:hover {
-        background-color: #e60000; 
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-
-        .update-button button:hover {
-            background-color: #1e40af;
-        }
-        .footer {
-            margin-top: 30px;
-            font-size: 14px;
-            color: #60a5fa;
-        }
+}
     </style>
     
         <script>
@@ -138,6 +155,9 @@
 <body>
 
     <h1>Air Quality Dashboard</h1>
+    <p style="font-size: 18px; color: #a5f3fc; margin-top: -10px; margin-bottom: 30px; text-shadow: 0 1px 3px rgba(0,0,0,0.6); animation: fadeIn 2s ease-in-out;">
+    Real-time insights for a healthier tomorrow ✨🌿
+</p>
     
 
     <div class="update-button">
@@ -255,7 +275,7 @@
                             }
                         }, 
                         plugins: { 
-                            legend: { labels: { color: '#ffffff', font: { size: 18 } } }, 
+                            legend: { labels: { color: '#ffffff', font: { size: 20 } } }, 
                             tooltip: { titleColor: '#ffffff', bodyColor: '#ffffff' } 
                         } 
                     }

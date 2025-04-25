@@ -3,80 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Admin</title>
+    <title>AQ Monitor - Add Admin</title>
+    <link rel="icon" type="image/png" href="Img/IMG_9098.PNG">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: #0a192f; 
-            color: #d1d5db; 
+            background-image: url(Img/earth-planet.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            backdrop-filter: blur(3px);
+            color: #d1d5db;
         }
-
+    
         .form-container {
-            background: #1e293b; 
+            background: #1e293b;
             padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.5);
             text-align: center;
             width: 300px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-
+    
         .form-container h2 {
             margin-bottom: 20px;
-            color: #60a5fa; 
+            color: #60a5fa;
+            font-size: 24px;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
-
+    
         input[type="text"], input[type="password"] {
-            width: 80%;
+            width: 90%;
             padding: 12px;
             margin: 10px 0;
-            border: 2px solid #2563eb; 
-            border-radius: 8px;
-            background: #1e293b; 
-            color: #d1d5db; 
+            border: 2px solid #2563eb;
+            border-radius: 10px;
+            background: #1e293b;
+            color: #d1d5db;
             outline: none;
+            transition: border-color 0.3s, background 0.3s;
         }
-
+    
         input[type="text"]:focus, input[type="password"]:focus {
-            border-color: #60a5fa; 
+            border-color: #60a5fa;
+            background: #1e293b;
         }
-
+    
         button {
             width: 100%;
             padding: 12px;
-            background: #2563eb; 
-            border: 2px solid #1e40af; 
+            background: #2563eb;
+            border: 2px solid #1e40af;
             color: white;
             font-size: 16px;
-            border-radius: 8px;
+            font-weight: 500;
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s ease-in-out;
-            outline: none;
+            margin-top: 5px;
         }
-
+    
         button:hover {
-            background: #1e40af; 
-            transform: scale(1.08); 
+            background: #1e40af;
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
-
+    
         .back-button {
             margin-top: 20px;
             background-color: #f44336;
             padding: 10px 20px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 10px;
             color: white;
+            font-size: 17px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
         }
-
+    
         .back-button:hover {
             background-color: #d32f2f;
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
     </style>
+    
 </head>
 <body>
 

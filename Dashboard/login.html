@@ -3,71 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Air Quality Monitor - Login</title>
+    <link rel="icon" type="image/png" href="Img/IMG_9098.PNG">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: #0a192f; 
-            color: #d1d5db; 
-
+            background-image: url(Img/earth-planet.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            backdrop-filter: blur(3px);
+            color: #d1d5db;
+        }
+    
         .login-container {
-            background: #1e293b; 
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            background: rgba(30, 41, 59, 0.85);
+            padding: 30px 25px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
             text-align: center;
-            width: 300px;
+            width: 90%;
+            max-width: 350px;
+            backdrop-filter: blur(10px); 
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-
+    
         .login-container h2 {
-            margin-bottom: 20px;
-            color: #60a5fa; 
+            margin-bottom: 25px;
+            color: #60a5fa;
+            font-size: 28px;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
-
+    
         input[type="text"], input[type="password"] {
-            width: 80%;
-            padding: 12px;
+            width: 90%;
+            padding: 14px;
             margin: 10px 0;
-            border: 2px solid #2563eb; 
-            border-radius: 8px;
-            background: #1e293b; 
-            color: #d1d5db; 
+            border: 2px solid #2563eb;
+            border-radius: 10px;
+            background: rgba(30, 41, 59, 0.6);
+            color: #d1d5db;
+            font-size: 16px;
             outline: none;
+            transition: border-color 0.3s;
         }
-
+    
         input[type="text"]:focus, input[type="password"]:focus {
-            border-color: #60a5fa; 
+            border-color: #60a5fa;
+            background: rgba(30, 41, 59, 0.8);
         }
-
+    
         button {
             width: 100%;
-            padding: 12px;
-            background: #2563eb; 
-            border: 2px solid #1e40af; 
+            padding: 14px;
+            background: linear-gradient(90deg, #2563eb, #1e40af);
+            margin-top: 20px;
+            border: none;
             color: white;
-            font-size: 16px;
-            border-radius: 8px;
+            font-size: 17px;
+            font-weight: 500;
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s ease-in-out;
-            outline: none;
         }
-
+    
         button:hover {
-            background: #1e40af; 
-            transform: scale(1.08); 
+            background: linear-gradient(90deg, #1e40af, #2563eb);
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
     </style>
+    
 </head>
 <body>
 
     <div class="login-container">
-        <h2>Login</h2>
+        <h2>LOGIN</h2>
         <form action="login.php" method="POST">
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>

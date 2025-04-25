@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality Monitor - Navigation</title>
+    <link rel="icon" type="image/png" href="Img/IMG_9098.PNG">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('Img/earth-planet.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(6px);
+            color: #d1d5db;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+    
+        h1 {
+            color: #7db7ff;
+            margin-bottom: 40px;
+            font-size: 32px;
+            font-weight: 600;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+        }
+    
+        .button-container {
+            background: rgba(30, 41, 59, 0.85);
+            padding: 30px 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    
+        .button {
+            padding: 14px 28px;
+            font-size: 17px;
+            background: linear-gradient(90deg, #3466d3, #052996); /* Green gradient */
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 260px;
+            font-weight: 500;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+    
+        .button-logout {
+            background: linear-gradient(90deg, #ef4444, #b91c1c); /* Red gradient */
+        }
+    
+        .button:hover {
+            transform: translateY(-2px) scale(1.03);
+            opacity: 0.95;
+        }
+    
+        .button:focus {
+            outline: none;
+        }
+    
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #60a5fa;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+    <script>
+        function confirmLogout(event) {
+            
+            const isConfirmed = confirm("Are you sure you want to logout?");
+            if (!isConfirmed) {
+                
+                event.preventDefault();
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>WELCOME TO THE AIR QUALITY MONITORING SYSTEM</h1>
+    <p style="font-size: 18px; color: #a5f3fc; margin-top: -15px; margin-bottom: 30px; text-shadow: 0 1px 3px rgba(0,0,0,0.6);">
+        Empowering a cleaner tomorrow, one breath at a time 🌍✨
+    </p>
+
+    <div class="button-container">
+        <button onclick="window.location.href='get_aqi_data.php'" class="button">Update AQI Data</button>
+        <button onclick="window.location.href='index.html'" class="button">Go to Map View</button>
+        <button onclick="window.location.href='dashbord.php'" class="button">Dashboard and Graph</button>
+        <button onclick="window.location.href='alerts.php'" class="button">Alerts</button>
+        <button onclick="window.location.href='admin.html'" class="button">Admin Panel</button>
+        
+        <button onclick="confirmLogout(event); if(confirm('Are you sure you want to logout?')) { window.location.href='logout.php'; }" class="button button-logout">Logout</button>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Air Quality Monitoring System</p>
+    </div>
+
+</body>
+</html>
+

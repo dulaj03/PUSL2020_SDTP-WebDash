@@ -47,94 +47,108 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Air Quality Alerts</title>
+    <title>Air Quality Monitor - Alerts</title>
+    <link rel="icon" type="image/png" href="Img/IMG_9098.PNG">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #0a192f;
-            color: #d1d5db;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            flex-direction: column;
-        }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #0a192f;
+        color: #d1d5db;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        text-align: center;
+    }
 
-        h1 {
-            text-align: center;
-            color: #60a5fa;
-            margin-bottom: 20px;
-        }
+    h1 {
+        font-size: 2.2rem;
+        color: #60a5fa;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    }
 
-        .alert-container {
-            width: 80%;
-            max-width: 1000px;
-            margin: 20px;
-            background-color: #1e293b;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
+    .alert-container {
+        width: 85%;
+        max-width: 1000px;
+        background-color: #1e293b;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        margin-bottom: 30px;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
 
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
+    th, td {
+        padding: 14px;
+        text-align: center;
+        border-bottom: 1px solid rgba(209, 213, 219, 0.2);
+    }
 
-        th {
-            background-color: #2d3748;
-        }
+    th {
+        background-color: #2d3748;
+        color: #60a5fa;
+        font-size: 16px;
+    }
 
-        .alert {
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 5px;
-            color: white;
-            font-size: 16px;
-        }
+    td {
+        font-size: 15px;
+        color: #d1d5db;
+    }
 
-        .alert.moderate {
-            background-color: #ffb74d;
-        }
+    .alert {
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+    }
 
-        .alert.unhealthy-sensitive {
-            background-color: #ff7043;
-        }
+    .alert.moderate {
+        background-color: #f59e0b;
+    }
 
-        .alert.unhealthy {
-            background-color: #d32f2f;
-        }
+    .alert.unhealthy-sensitive {
+        background-color: #f97316;
+    }
 
-        .back-button {
-            margin-top: 20px;
-        }
+    .alert.unhealthy {
+        background-color: #ef4444;
+    }
 
-        .back-button a {
-            color: white;
-            background-color: red;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-        }
+    .back-button {
+        margin-top: 20px;
+    }
 
-        .back-button a:hover {
-            background-color: orangered;
-        }
-        .footer {
-            margin-top: 30px;
-            font-size: 14px;
-            color: #60a5fa;
-        }
-    </style>
+    .back-button a {
+        background-color: #ef4444;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-size: 16px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .back-button a:hover {
+        background-color: #dc2626;
+    }
+
+    .footer {
+        margin-top: 30px;
+        font-size: 14px;
+        color: #60a5fa;
+    }
+</style>
+
 </head>
 <body>
 
