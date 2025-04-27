@@ -1,0 +1,17 @@
+{
+    "workbench.colorTheme": "Monokai",
+    "editor.fontSize": 14,
+    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "editor.tabSize": 2,
+    "workbench.colorCustomizations": {
+      "titleBar.activeBackground": "#003b47",
+      "titleBar.inactiveBackground": "#003a42",
+      "titleBar.activeForeground": "#ffffff",
+      "titleBar.inactiveForeground": "#cccccc",
+      "activityBar.background": "#003647",
+      "activityBar.foreground": "#ffffff",
+      "activityBar.inactiveForeground": "#d9d9d9",
+      "activityBarBadge.background": "#d8b100",
+      "activityBarBadge.foreground": "#ffffff"
+    }
+  }
