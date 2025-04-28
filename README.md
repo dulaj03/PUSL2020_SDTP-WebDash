@@ -7,6 +7,7 @@ Testing ensures data accuracy, API reliability, database integrity, and system r
 ## Functions :- 
 - Fetching and displaying air quality index (AQI) data.
 - Graphical Data Visualization.
+- Viewing Air Quality via the Map.
 - Viewing Alerts.
 - Logging and Logout.
 - Managing Admin Users.
@@ -19,6 +20,14 @@ Testing ensures data accuracy, API reliability, database integrity, and system r
 - To design a user-friendly and functional web dashboard for air quality monitoring.
 - To enable administrative control features like login/logout and user management.
 - To use server-side scripting and database connectivity for real-time data operations.
+
+## Database Implementation
+The “air_quality_db” represents the system database. The system contains three essential tables. :-  
+- aqi_data :- Stores historical AQI readings.
+- sensors :- Sensors table contains AQI readings together with detailed pollutant information about 
+PM2.5 along with PM10, CO, NO2, SO2, O3, Temperature and Humidity.
+- users :- Every secure part of the system requires admin login credentials which are handled by this 
+table. 
 
 ## Techs and Tools :- 
 - html / css / js
