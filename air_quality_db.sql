@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 10, 2025 at 01:50 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.1
+-- Generation Time: Apr 28, 2025 at 08:03 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `aqi_data` (
   `sensor_id` int(11) DEFAULT NULL,
   `aqi_value` int(11) DEFAULT NULL,
   `recorded_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -56,18 +56,18 @@ CREATE TABLE `sensors` (
   `humidity` float DEFAULT NULL,
   `status` varchar(10) DEFAULT 'active',
   `last_updated` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `sensors`
 --
 
 INSERT INTO `sensors` (`id`, `location_name`, `latitude`, `longitude`, `aqi`, `pm25`, `pm10`, `co`, `no2`, `so2`, `o3`, `temperature`, `humidity`, `status`, `last_updated`) VALUES
-(1, 'Colombo', '6.913047', '79.848070', 82, 82, 0, 0, 0, 0, 0, 35, 49, 'active', '2025-04-04 10:58:11'),
-(29, 'India', '30.735567', '76.775714', 163, 163, 113, 10, 24, 10, 47, 30.55, 29, 'active', '2025-04-04 10:58:12'),
-(34, 'Chennai', '13.103600', '80.290900', 174, 174, 62, 7, 10, 7, 9, 31.9, 67.3333, 'active', '2025-04-04 10:58:13'),
-(38, 'Tokyo', '35.641463', '139.698171', 34, 1, 6, 3, 20, 1, 34, 17.5, 31.1, 'active', '2025-04-04 10:58:13'),
-(239, 'London', '51.507351', '-0.127758', 97, 97, 39, 2, 16, 1, 16, 9.4, 76, 'active', '2025-04-04 10:58:14');
+(1, 'Colombo', 6.913047, 79.848070, 82, 82, 0, 0, 0, 0, 0, 35, 49, 'active', '2025-04-27 15:06:22'),
+(29, 'India', 30.735567, 76.775714, 68, 68, 43, 7, 6, 5, 67, 27.7, 16, 'active', '2025-04-27 15:06:22'),
+(34, 'Chennai', 13.103600, 80.290900, 42, 42, 25, 3, 4, 4, 8, 33.5667, 69, 'active', '2025-04-27 15:06:23'),
+(38, 'Tokyo', 35.641463, 139.698171, 65, 1, 18, 3, 6, 1, 64, 20.3, 47.9, 'active', '2025-04-27 15:06:25'),
+(239, 'London', 51.507351, -0.127758, 104, 104, 37, 4, 20, 0, 8, 13.4, 77.2, 'active', '2025-04-27 15:06:25');
 
 -- --------------------------------------------------------
 
@@ -79,7 +79,7 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
@@ -87,8 +87,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`) VALUES
 (1, 'Admin', '$2y$10$xfNjxqLKj6pf5oECpH8fA.zLBC/39qIGbyaMLOF205M.a9rlX10OG'),
-(3, 'Akila', '$2y$10$2dfLV2Qwdk8ppVmlIgeMPefu9py9sYgUrj3rwFC56n84cYA5eauZW'),
-(4, 'Mahi', '$2y$10$nk9v1z1m3rTBJ9L23hJNRO3KO3zCIvXrN/S2V5UbNqueWCnRhy2wG');
+(5, 'Dulaj', '$2y$10$7EU/01.xeGxWu21Om802JO5u8goEu7SLb1krZyG/NmsjeN/EDPW0q'),
+(8, 'ddhewage', '$2y$10$pohO11itaRd2SjqijNV6s.Y1yEfJEEpJI6MixNDivwLoSm.LXWita');
 
 --
 -- Indexes for dumped tables
@@ -129,13 +129,13 @@ ALTER TABLE `aqi_data`
 -- AUTO_INCREMENT for table `sensors`
 --
 ALTER TABLE `sensors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=290;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=450;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
